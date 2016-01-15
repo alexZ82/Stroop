@@ -10,7 +10,7 @@ function mystroop(num_of_trials, the_colours,subj_num)
 % MYSTROOP  runs a simple stroop task experiment
 %   the_colours = {'yellow','magenta','cyan','red','green','blue','white','black'}
 %   MYSTROOP(100, the_colours,1) will run 100 trials using the above
-%   colours and sanve the results in a csv names subject1.csv
+%   colours and save the results in a csv named subject1.csv
 
 possible_colours = length(the_colours);
 rand_text = randint(1,num_of_trials,[1,possible_colours])%generate the text of the trials
@@ -52,7 +52,7 @@ set(S.pb(2:(possible_colours+1)),{'callback'},{{@pb1_call,S}})  % Set callbacks.
             l = get(gcbo,'string');    
             col = strmatch(l, the_colours);
             subject_choices(S.CNT) = col           
-            S.CNT = S.CNT + 1;  % The call counter.            
+            S.CNT = S.CNT + 1;  % The trial counter.            
             if  S.CNT > num_of_trials 
                 set(S.pb(1),{'string','Foregroundcolor'},{'Finished','black'}); 
                 set(S.pb(2:(possible_colours+1)),{'enable'},{'off'}); 

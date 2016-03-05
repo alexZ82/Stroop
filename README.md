@@ -1,2 +1,2 @@
 # Stroop
-A simple implementation of the Stroop task
+A simple implementation of the Stroop task -- just for fun...
